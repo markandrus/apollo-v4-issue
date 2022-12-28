@@ -5,14 +5,27 @@ const { GraphQLError } = require('graphql')
 const gql = require('graphql-tag')
 const { fetch } = require('undici')
 
-class AuthPlugin {
-  requestDidStart () {
-    throw new GraphQLError('Unauthorized', {
+class AuthPluginError extends GraphQLError {
+  constructor () {
+    super('Unauthorized', {
       extensions: {
         code: 'UNAUTHORIZED',
         http: { status: 403 }
       }
     })
+  }
+}
+
+class AuthPlugin {
+  requestDidStart () {
+    throw new AuthPluginError()
+  }
+
+  unexpectedErrorProcessingRequest ({ error }) {
+    // NOTE: Only re-throw instances of our own error.
+    if (error instanceof AuthPluginError) {
+      throw error
+    }
   }
 }
 

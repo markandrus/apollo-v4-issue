@@ -3,13 +3,14 @@
   "private": true,
   "workspaces": [
     "v3",
-    "v4"
+    "v4",
+    "v4-workaround"
   ],
   "version": "0.1.0",
   "description": "Demonstrate an issue with Apollo v4",
   "main": "index.js",
   "scripts": {
-    "test": "(cd v3; npm test) && (cd v4; npm test)"
+    "test": "(cd v3; npm test) && (cd v4; npm test) && (cd v4-workaround; npm test)"
   },
   "repository": {
     "type": "git",
