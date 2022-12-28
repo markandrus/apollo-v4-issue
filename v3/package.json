@@ -1,0 +1,24 @@
+{
+  "name": "apollo-v3-issue",
+  "version": "0.1.0",
+  "description": "Demonstrate an issue with Apollo v4",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markandrus/apollo-v4-issue.git"
+  },
+  "author": "Mark Andrus Roberts <markandrusroberts@gmail.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/markandrus/apollo-v4-issue/issues"
+  },
+  "homepage": "https://github.com/markandrus/apollo-v4-issue#readme",
+  "dependencies": {
+    "apollo-server": "^3.11.1",
+    "apollo-server-core": "^3.11.1",
+    "undici": "^5.14.0"
+  }
+}
