@@ -28,10 +28,13 @@ async function main () {
     headers: { 'Content-Type': 'application/json' },
     body: '{"query":"{ok}"}'
   })
+
   const body = await response.text()
+  console.log(body)
+
   const { status } = response
-  assert.strictEqual(body, 'Unauthorized', 'Apollo v3 should set body equal to "Unauthorized"')
   assert.strictEqual(status, 403, 'Apollo v3 should set status code equal to 403')
+
   server.stop()
 }
 
